@@ -4,7 +4,7 @@
 BEGIN
     DBMS_OUTPUT.PUT_LINE('¡Hello World :) using PLSQL r.n.!');
 END;
-
+/
 
 --2. Sum
 DECLARE
@@ -14,7 +14,7 @@ DECLARE
 BEGIN
    DBMS_OUTPUT.PUT_LINE('Sum of var a & b is: '||resultado); 
 END;
-
+/
 
 --3. If statement
 DECLARE 
@@ -27,7 +27,7 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Inactive');
     END IF;
 END;
-
+/
 
 --4. For statement
 BEGIN
@@ -36,7 +36,7 @@ LOOP
 DBMS_OUTPUT.PUT_LINE(contador);
 END LOOP;
 END;
-
+/
 
 --5. Give value to a var(s)
 DECLARE 
@@ -49,7 +49,7 @@ BEGIN
     nombre_completo := nombre||' '||apellido;
     DBMS_OUTPUT.PUT_LINE(nombre_completo);
 END;
-
+/
 
 
 --6. Insert 5 new employees (with sequence)
@@ -66,7 +66,7 @@ BEGIN
     INSERT INTO EMPLOYEES VALUES(EMPLOYEES_SEQ.nextval,'Mike','Roh','MROH','515.123.8183',fecha_ingreso,'MK_MAN',12000,null,100,20);
     INSERT INTO EMPLOYEES VALUES(EMPLOYEES_SEQ.nextval,'Rosa','Ku','RKU','515.123.8060',fecha_ingreso,'MK_MAN',10000,null,100,20);
 END;
-
+/
 
 --7. Declare a cursor 
 DECLARE
