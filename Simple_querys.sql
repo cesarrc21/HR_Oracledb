@@ -1,6 +1,4 @@
-/*
-Part1: Working just with employees table from HR
-*/
+/* Part1: Working just with employees table from HR */;
 
 --1. Table description and some info
 DESC EMPLOYEES;
@@ -22,9 +20,8 @@ UPDATE EMPLOYEES SET PHONE_NUMBER = '515.123.9119' WHERE EMAIL = 'CROMERO';
 --SELECT * FROM EMPLOYEES;
 
 
-/*
-Part2: Working with all HR tables
-*/
+
+/* Part2: Working with all HR tables*/;
 
 -- Employees order by salary
 SELECT EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY FROM EMPLOYEES ORDER BY SALARY DESC;
@@ -42,8 +39,8 @@ SELECT employees.first_name, employees.last_name, jobs.job_title, departments.de
 INNER JOIN jobs ON employees.job_id = jobs.job_id INNER JOIN departments ON employees.department_id = departments.department_id;
 
 -- Employees' department and city location
-SELECT employees.first_name,departments.department_name,locations.city FROM employees INNER JOIN departments ON employees.department_id=departments.department_id 
-INNER JOIN locations ON departments.location_id=locations.location_id;
+SELECT employees.first_name,departments.department_name,locations.city FROM employees INNER JOIN departments 
+ON employees.department_id=departments.department_id INNER JOIN locations ON departments.location_id=locations.location_id;
 
 -- City with more employees
 SELECT locations.city,COUNT(*) AS total_employees FROM employees 
@@ -52,8 +49,9 @@ INNER JOIN locations ON departments.location_id=locations.location_id
 GROUP BY locations.city ORDER BY total_employees DESC;
 
 -- City and department which offer best salary
-SELECT locations.city,departments.department_name,employees.salary FROM employees INNER JOIN departments ON employees.department_id=departments.department_id 
-INNER JOIN locations ON departments.location_id=locations.location_id WHERE employees.salary = (SELECT MAX(salary)FROM employees);
+SELECT locations.city,departments.department_name,employees.salary FROM employees INNER JOIN departments 
+ON employees.department_id=departments.department_id INNER JOIN locations ON departments.location_id=locations.location_id 
+WHERE employees.salary = (SELECT MAX(salary)FROM employees);
 
 -- Popular departments in Seattle
 SELECT departments.department_name,COUNT(*) FROM employees  INNER JOIN departments ON employees.department_id=departments.department_id 
